@@ -7,10 +7,9 @@ import java.io.Serializable;
 @Table(name = "car")
 public class Car implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @OneToOne
+    @MapsId
     private User user;
     @Column(name = "model")
     private String model;
